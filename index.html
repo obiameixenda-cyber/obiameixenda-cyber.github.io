@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Futuro del Planeta - Cambio Climático</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+<!-- Objeto en movimiento -->
+<div id="movingObject"></div>
+
+<header>
+    <h1>El Futuro del Planeta</h1>
+    <p class="subtitle">Cambio Climático y Sostenibilidad</p>
+</header>
+
+<div class="container">
+
+    <!-- Intercambio de imágenes -->
+    <section class="image-swap-section">
+        <h2>🔄 Antes y Después del Cambio Climático</h2>
+        <p class="info">Haz clic en las imágenes para intercambiarlas</p>
+
+        <div class="image-container">
+            <img id="img1" class="swap-image"
+                 src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop"
+                 alt="Bosque saludable">
+
+            <img id="img2" class="swap-image"
+                 src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=600&h=400&fit=crop"
+                 alt="Paisaje árido">
+        </div>
+    </section>
+
+    <!-- Texto interactivo -->
+    <section class="text-section">
+        <h2>💬 Tu Compromiso con el Planeta</h2>
+        <input type="text" id="userText" placeholder="Escribe tu compromiso...">
+        <div id="displayText">Tu mensaje aparecerá aquí...</div>
+    </section>
+
+    <!-- Galería -->
+    <section class="gallery">
+        <h2>🌍 Impacto del Cambio Climático</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1569163139394-de4798aa62b6?w=400&h=300&fit=crop" alt="Glaciar">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=400&h=300&fit=crop" alt="Energía renovable">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop" alt="Sequía">
+            </div>
+        </div>
+    </section>
+
+    <!-- Enlaces -->
+    <section class="links-section">
+        <h2>🔗 Recursos</h2>
+        <a class="btn-link" href="https://github.com" target="_blank" title="GitHub">GitHub</a>
+        <a class="btn-link" href="https://www.un.org/es/climatechange" target="_blank" title="ONU">ONU</a>
+        <a class="btn-link" href="https://climate.nasa.gov/" target="_blank" title="NASA">NASA</a>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2025 - Proyecto educativo sobre Cambio Climático</p>
+</footer>
+
+<!-- JavaScript -->
+<script src="scripts/script.js"></script>
+</body>
+</html>
