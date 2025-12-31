@@ -1,39 +1,64 @@
-// Cambiar color de fondo
-var colorBtn = document.getElementById('color-btn');
-var colors = ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#43e97b', '#fa709a'];
-var currentIndex = 0;
+// 1. INTERCAMBIO DE IMÁGENES AL HACER CLIC
+const img1 = document.getElementById('img1');
+const img2 = document.getElementById('img2');
 
-colorBtn.addEventListener('click', function() {
-  currentIndex = (currentIndex + 1) % colors.length;
-  document.body.style.background = 'linear-gradient(135deg, ' + colors[currentIndex] + ' 0%, ' + colors[(currentIndex + 1) % colors.length] + ' 100%)';
-  
-  var message = document.getElementById('message');
-  message.innerHTML = '¡Color cambiado! Haz clic de nuevo para más colores.';
-  
-  // Limpiar mensaje después de 2 segundos
-  setTimeout(function() {
-    message.innerHTML = '';
-  }, 2000);
+function swapImages() {
+    const tempSrc = img1.src;
+    const tempAlt = img1.alt;
+    
+    img1.src = img2.src;
+    img1.alt = img2.alt;
+    
+    img2.src = tempSrc;
+    img2.alt = tempAlt;
+}
+
+img1.addEventListener('click', swapImages);
+img2.addEventListener('click', swapImages);
+
+// 2. CAMPO DE TEXTO QUE CAMBIA CONTENIDO
+const userTextInput = document.getElementById('userText');
+const displayText = document.getElementById('displayText');
+
+userTextInput.addEventListener('input', function() {
+    if (this.value.trim() === '') {
+        displayText.textContent = 'Tu mensaje aparecerá aquí...';
+        displayText.style.color = '#a0d8ef';
+    } else {
+        displayText.textContent = '🌱 ' + this.value + ' 🌱';
+        displayText.style.color = '#00ff88';
+    }
 });
 
-// Animación de bienvenida
-window.addEventListener('load', function() {
-  var header = document.querySelector('header');
-  header.style.opacity = '0';
-  header.style.transform = 'translateY(-20px)';
-  header.style.transition = 'all 0.5s ease';
-  
-  setTimeout(function() {
-    header.style.opacity = '1';
-    header.style.transform = 'translateY(0)';
-  }, 100);
-});
+// 3. OBJETO EN MOVIMIENTO
+const movingObject = document.getElementById('movingObject');
+let posX = Math.random() * (window.innerWidth - 80);
+let posY = Math.random() * (window.innerHeight - 80);
+let velocityX = 2 + Math.random() * 2;
+let velocityY = 2 + Math.random() * 2;
 
-// Efecto en la foto de perfil
-var profilePic = document.getElementById('profile-pic');
-profilePic.addEventListener('click', function() {
-  this.style.transform = 'rotate(360deg) scale(1.1)';
-  setTimeout(function() {
-    profilePic.style.transform = 'rotate(0deg) scale(1)';
-  }, 500);
+function moveObject() {
+    posX += velocityX;
+    posY += velocityY;
+
+    // Rebote en los bordes
+    if (posX <= 0 || posX >= window.innerWidth - 80) {
+        velocityX = -velocityX;
+    }
+    if (posY <= 0 || posY >= window.innerHeight - 80) {
+        velocityY = -velocityY;
+    }
+
+    movingObject.style.left = posX + 'px';
+    movingObject.style.top = posY + 'px';
+
+    requestAnimationFrame(moveObject);
+}
+
+moveObject();
+
+// Ajustar posición del objeto en movimiento al cambiar tamaño de ventana
+window.addEventListener('resize', function() {
+    if (posX > window.innerWidth - 80) posX = window.innerWidth - 80;
+    if (posY > window.innerHeight - 80) posY = window.innerHeight - 80;
 });
