@@ -1,104 +1,229 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #333;
-  line-height: 1.6;
-  min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 header {
-  background-color: white;
-  text-align: center;
-  padding: 40px 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-header h1 {
-  color: #667eea;
-  margin-bottom: 20px;
-  font-size: 2.5em;
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #00d4ff, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-header img {
-  border-radius: 50%;
-  border: 5px solid #667eea;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+.subtitle {
+    font-size: 1.2rem;
+    color: #a0d8ef;
+    font-weight: 300;
 }
 
-main {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
 }
 
-section {
-  background-color: white;
-  padding: 30px;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+/* Sección de intercambio de imágenes */
+.image-swap-section {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    backdrop-filter: blur(5px);
 }
 
-section:hover {
-  transform: translateY(-5px);
+.image-swap-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #00ff88;
 }
 
-h2 {
-  color: #667eea;
-  margin-bottom: 15px;
-  font-size: 1.8em;
+.image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 1rem;
 }
 
-p {
-  font-size: 1.1em;
-  color: #555;
+.swap-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid rgba(0, 255, 136, 0.3);
 }
 
-ul {
-  list-style-position: inside;
-  padding-left: 20px;
+.swap-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
 }
 
-li {
-  margin: 10px 0;
-  font-size: 1.1em;
-  color: #555;
+/* Sección de texto interactivo */
+.text-section {
+    background: rgba(0, 212, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
 }
 
-button {
-  background-color: #667eea;
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  font-size: 1.1em;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.text-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #00d4ff;
 }
 
-button:hover {
-  background-color: #764ba2;
+#userText {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 2px solid #00d4ff;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    margin-bottom: 1rem;
 }
 
-#message {
-  margin-top: 15px;
-  font-weight: bold;
-  color: #667eea;
+#displayText {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Objeto en movimiento */
+#movingObject {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #00ff88, #00d4ff);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+    z-index: 1000;
+    pointer-events: none;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-20px) scale(1.1); }
+}
+
+/* Galería adicional */
+.gallery {
+    margin: 3rem 0;
+}
+
+.gallery h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #00ff88;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Enlaces */
+.links-section {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.links-section h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1.5rem;
+    color: #00d4ff;
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    background: linear-gradient(45deg, #00d4ff, #00ff88);
+    color: #000;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
 }
 
 footer {
-  background-color: rgba(0,0,0,0.8);
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .image-container {
+        grid-template-columns: 1fr;
+    }
+
+    .swap-image {
+        height: 250px;
+    }
 }
