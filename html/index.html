@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Futuro del Planeta - Cambio Climático</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Objeto en movimiento -->
+    <div id="movingObject"></div>
+
+    <header>
+        <h1>El Futuro del Planeta</h1>
+        <p class="subtitle">Cambio Climático y Sostenibilidad</p>
+    </header>
+
+    <div class="container">
+        <!-- Sección de intercambio de imágenes -->
+        <section class="image-swap-section">
+            <h2>🔄 Antes y Después del Cambio Climático</h2>
+            <p style="margin-bottom: 1rem; color: #a0d8ef;">Haz clic en las imágenes para intercambiarlas</p>
+            <div class="image-container">
+                <img id="img1" class="swap-image" 
+                     src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop" 
+                     alt="Bosque saludable">
+                <img id="img2" class="swap-image" 
+                     src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=600&h=400&fit=crop" 
+                     alt="Paisaje árido">
+            </div>
+            <p style="font-size: 0.9rem; color: #a0d8ef; text-align: center;">
+                Haz clic en cualquiera de las dos imágenes para intercambiar sus posiciones
+            </p>
+        </section>
+
+        <!-- Sección de texto interactivo -->
+        <section class="text-section">
+            <h2>💬 Tu Compromiso con el Planeta</h2>
+            <p style="margin-bottom: 1rem; color: #a0d8ef;">
+                Escribe tu compromiso personal para combatir el cambio climático
+            </p>
+            <input type="text" 
+                   id="userText" 
+                   placeholder="Ej: Voy a reducir mi uso de plásticos..." 
+                   maxlength="100">
+            <div id="displayText">Tu mensaje aparecerá aquí...</div>
+        </section>
+
+        <!-- Galería adicional -->
+        <section class="gallery">
+            <h2>🌍 Impacto del Cambio Climático</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1569163139394-de4798aa62b6?w=400&h=300&fit=crop" 
+                         alt="Glaciar derritiéndose">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=400&h=300&fit=crop" 
+                         alt="Energía renovable">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop" 
+                         alt="Sequía">
+                </div>
+            </div>
+        </section>
+
+        <!-- Enlaces -->
+        <section class="links-section">
+            <h2>🔗 Recursos y Enlaces</h2>
+            <a href="https://github.com" 
+               class="btn-link" 
+               target="_blank" 
+               title="Visita mi repositorio en GitHub">
+                Mi GitHub
+            </a>
+            <a href="https://www.un.org/es/climatechange" 
+               class="btn-link" 
+               target="_blank" 
+               title="Información sobre cambio climático de la ONU">
+                ONU Cambio Climático
+            </a>
+            <a href="https://climate.nasa.gov/" 
+               class="btn-link" 
+               target="_blank" 
+               title="Portal de la NASA sobre cambio climático">
+                NASA Climate
+            </a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 - Proyecto educativo sobre Cambio Climático</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #a0d8ef;">
+            Creado con HTML, CSS y JavaScript
+        </p>
+    </footer>
+</body>
+</html>
