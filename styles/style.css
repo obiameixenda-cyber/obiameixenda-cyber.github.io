@@ -17,52 +17,39 @@ header {
     padding: 2rem;
     text-align: center;
     backdrop-filter: blur(10px);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
-    margin-bottom: 0.5rem;
     background: linear-gradient(45deg, #00d4ff, #00ff88);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .subtitle {
-    font-size: 1.2rem;
     color: #a0d8ef;
-    font-weight: 300;
 }
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
     padding: 3rem 2rem;
 }
 
-/* Sección de intercambio de imágenes */
-.image-swap-section {
-    background: rgba(255, 255, 255, 0.05);
+.image-swap-section,
+.text-section,
+.links-section {
+    background: rgba(255,255,255,0.05);
     padding: 2rem;
     border-radius: 15px;
     margin-bottom: 3rem;
-    backdrop-filter: blur(5px);
-}
-
-.image-swap-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #00ff88;
 }
 
 .image-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    margin-bottom: 1rem;
 }
 
 .swap-image {
@@ -71,83 +58,27 @@ h1 {
     object-fit: cover;
     border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 3px solid rgba(0, 255, 136, 0.3);
-}
-
-.swap-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
-}
-
-/* Sección de texto interactivo */
-.text-section {
-    background: rgba(0, 212, 255, 0.1);
-    padding: 2rem;
-    border-radius: 15px;
-    margin-bottom: 3rem;
-}
-
-.text-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #00d4ff;
 }
 
 #userText {
     width: 100%;
     padding: 1rem;
-    font-size: 1.1rem;
-    border: 2px solid #00d4ff;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
     margin-bottom: 1rem;
 }
 
 #displayText {
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 1.5rem;
     text-align: center;
-    padding: 2rem;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    min-height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* Objeto en movimiento */
 #movingObject {
     position: fixed;
     width: 80px;
     height: 80px;
     background: radial-gradient(circle, #00ff88, #00d4ff);
     border-radius: 50%;
-    box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
-    z-index: 1000;
-    pointer-events: none;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-20px) scale(1.1); }
-}
-
-/* Galería adicional */
-.gallery {
-    margin: 3rem 0;
-}
-
-.gallery h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    color: #00ff88;
+    top: 20px;
+    left: 0;
 }
 
 .gallery-grid {
@@ -156,38 +87,9 @@ h1 {
     gap: 1.5rem;
 }
 
-.gallery-item {
-    position: relative;
-    height: 200px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
 .gallery-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1);
-}
-
-/* Enlaces */
-.links-section {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 15px;
-    margin-top: 3rem;
-    text-align: center;
-}
-
-.links-section h2 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 1.5rem;
-    color: #00d4ff;
+    border-radius: 10px;
 }
 
 .btn-link {
@@ -195,35 +97,12 @@ h1 {
     padding: 1rem 2rem;
     margin: 0.5rem;
     background: linear-gradient(45deg, #00d4ff, #00ff88);
-    color: #000;
+    color: black;
     text-decoration: none;
     border-radius: 50px;
-    font-weight: 600;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
 }
 
 footer {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 2rem;
     text-align: center;
-    margin-top: 3rem;
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    .image-container {
-        grid-template-columns: 1fr;
-    }
-
-    .swap-image {
-        height: 250px;
-    }
+    padding: 2rem;
 }
